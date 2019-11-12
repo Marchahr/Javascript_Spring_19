@@ -59,7 +59,7 @@ let button = document.getElementById('getAnswerData');
 
 //POST
 const form = document.getElementById("createUser");
-
+ 
 button.addEventListener("click", SendData);
 function SendData(event) {
     event.preventDefault();
