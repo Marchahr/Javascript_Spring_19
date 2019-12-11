@@ -1,13 +1,25 @@
 html, body {
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 10px;
 }
 canvas {
 /*  display: block;
-*/ /* height: 25px; 
-  width: 50px;*/
+*/  
+/*position: relative;
+height: 400px !important; 
+width: 800px !important;*/
 }
  
  .stPadding{
   min-height: 40px;
+}
+
+#style{
+
+	position: relative;
+	
+}
+
+ #widthStyle{
+ width: 20%;	
 }

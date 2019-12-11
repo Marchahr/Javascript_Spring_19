@@ -102,6 +102,9 @@ function SendData(event) {
         cjs_data.data  = {
           labels: [],
           datasets: [{ label: 'Top Results',data: [] }],
+          options: {
+            responsive: true
+          }
         };
         for ( item of resp ) {
             cjs_data.data.labels.push( item.word );
@@ -111,14 +114,16 @@ function SendData(event) {
        // let ctx = document.getElementById('myChart').getContext('2d');
         //create one for each input...
         //console.log(bd);
+
         let ctx_canvas = document.createElement('canvas');
-        document.body.appendChild(ctx_canvas);
+        let styleDiv = document.getElementById('style');
+        styleDiv.appendChild(ctx_canvas);
         let ctx = ctx_canvas.getContext('2d');
         console.log(ctx);
         // let xlabels = []
 
-        let myChart = new Chart(ctx, cjs_data);
-
+        let myChart = new Chart(ctx, cjs_data); 
+        
 
         console.log(cjs_data); 
 
