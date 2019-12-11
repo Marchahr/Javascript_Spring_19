@@ -3,6 +3,11 @@ html, body {
   padding: 0;
 }
 canvas {
-  display: block;
+/*  display: block;
+*/ /* height: 25px; 
+  width: 50px;*/
 }
  
+ .stPadding{
+  min-height: 40px;
+}

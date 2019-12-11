@@ -96,6 +96,33 @@ function SendData(event) {
         resp[random].word;
         console.log(resp[random].word);
         document.getElementById(location).innerHTML = resp[random].word;
+
+        const cjs_data = {};
+        cjs_data.type  = 'bar';
+        cjs_data.data  = {
+          labels: [],
+          datasets: [{ label: 'Top Results',data: [] }],
+        };
+        for ( item of resp ) {
+            cjs_data.data.labels.push( item.word );
+            cjs_data.data.datasets[0].data.push( item.score );
+        }
+
+       // let ctx = document.getElementById('myChart').getContext('2d');
+        //create one for each input...
+        //console.log(bd);
+        let ctx_canvas = document.createElement('canvas');
+        document.body.appendChild(ctx_canvas);
+        let ctx = ctx_canvas.getContext('2d');
+        console.log(ctx);
+        // let xlabels = []
+
+        let myChart = new Chart(ctx, cjs_data);
+
+
+        console.log(cjs_data); 
+
+
     })
     .catch(function(resp) {
       document.getElementById("Output").innerHTML = "There was an error";
