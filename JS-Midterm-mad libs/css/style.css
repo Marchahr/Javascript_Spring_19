@@ -23,3 +23,13 @@ width: 800px !important;*/
  #widthStyle{
  width: 20%;	
 }
+
+canvas{
+	position: absolute;
+	visibility: hidden;
+}
+
+canvas.active{
+
+	visibility: visible;
+}

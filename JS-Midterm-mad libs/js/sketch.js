@@ -114,13 +114,21 @@ function SendData(event) {
        // let ctx = document.getElementById('myChart').getContext('2d');
         //create one for each input...
         //console.log(bd);
-
+        // var widthStyles = [width=20%]
+        // <div id='widthStyle'>
         let ctx_canvas = document.createElement('canvas');
+        ctx_canvas.classList.add(location);
+
+        // if (ctx_canvas.classList.includes("Exclamation")) {
+        //   ctx_canvas.classList.add("active");
+        // }
+
         let styleDiv = document.getElementById('style');
         styleDiv.appendChild(ctx_canvas);
         let ctx = ctx_canvas.getContext('2d');
         console.log(ctx);
         // let xlabels = []
+
 
         let myChart = new Chart(ctx, cjs_data); 
         
@@ -129,8 +137,33 @@ function SendData(event) {
 
 
     })
+
+
+
     .catch(function(resp) {
       document.getElementById("Output").innerHTML = "There was an error";
     });
   }
 }
+
+
+        let buttons = document.querySelectorAll("button");
+
+        buttons.forEach(function( button ){
+          button.addEventListener('click', function(event){
+            console.log(event.target.innerHTML);
+
+            let charts = document.querySelectorAll("canvas");
+            charts.forEach(function(chart){
+              chart.classList.remove("active");
+            })
+
+            let chartToShow = document.querySelector("." + event.target.innerHTML);
+
+            chartToShow.classList.add("active");
+
+          })
+        })
+
+
+
