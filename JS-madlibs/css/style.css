@@ -2,6 +2,7 @@ html, body {
   margin: 10px;
   padding: 10px;
 }
+
 canvas {
 /*  display: block;
 */  
@@ -30,6 +31,9 @@ canvas{
 }
 
 canvas.active{
-
 	visibility: visible;
+}
+
+h4{
+	font-size: 12px;
 }

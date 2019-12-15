@@ -139,7 +139,6 @@ function SendData(event) {
     })
 
 
-
     .catch(function(resp) {
       document.getElementById("Output").innerHTML = "There was an error";
     });
